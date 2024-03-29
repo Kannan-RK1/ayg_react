@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.14398120.css",
+    "main.js": "/static/js/main.d778a1d7.js",
+    "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
+    "static/media/banner_hcb.png": "/static/media/banner_hcb.d38ef96433ded0886562.png",
+    "static/media/financing_banner.png": "/static/media/financing_banner.7fb8846603c94d18ee6a.png",
+    "static/media/transportation_banner.png": "/static/media/transportation_banner.eb2668c914ba834ea6a2.png",
+    "static/media/hurricane_banner.png": "/static/media/hurricane_banner.d5a2bfa721181599791f.png",
+    "static/media/insurance_banner.png": "/static/media/insurance_banner.3f205e720dd73012971c.png",
+    "static/media/charter_banner.png": "/static/media/charter_banner.7357edc6ac0dbf238981.png",
+    "static/media/ayg-logo-blue.png": "/static/media/ayg-logo-blue.1485338b1fb8f016295c.png",
+    "static/media/ayg-icon.jpg": "/static/media/ayg-icon.fa55be23e664c8e78d90.jpg",
+    "index.html": "/index.html",
+    "main.14398120.css.map": "/static/css/main.14398120.css.map",
+    "main.d778a1d7.js.map": "/static/js/main.d778a1d7.js.map",
+    "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14398120.css",
+    "static/js/main.d778a1d7.js"
+  ]
+}

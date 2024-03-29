@@ -6,8 +6,9 @@ const path = require("path");
 const mysql = require("mysql2");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+const fs = require("fs");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 
 app.use(express.static(path.join(__dirname, "build")));
 
@@ -211,64 +212,73 @@ American Yacht Group
   }
 });
 
-app.post('/api/send-email-careers', upload.single('FL_file'), async (req, res) => {
-  try {
-    const { NM_firstName, NM_lastName, ID_email, NO_phoneNumber, CA_category, DS_comments1 } = req.body;
-    const file = req.file;
-    
-    const mailOptions6 = {
-      from: 'broker@megasails.com',
-      to: ID_email,
-      subject: 'Application Submission',
-      text: `
+app.post(
+  "/api/send-email-careers",
+  upload.single("FL_file"),
+  async (req, res) => {
+    try {
+      const {
+        NM_firstName,
+        NM_lastName,
+        ID_email,
+        NO_phoneNumber,
+        CA_category,
+        DS_comments1,
+      } = req.body;
+      const file = req.file;
+
+      const mailOptions6 = {
+        from: "broker@megasails.com",
+        to: ID_email,
+        subject: "Application Submission",
+        text: `
       Dear ${NM_firstName} ${NM_lastName},
 
-      Thank you for application. Our team will contact you soon.
+      Thank you for submitting your application. Our HR specialist will contact you at the earliest.
       
       Best Regards,
-      American Yacht Group
+      American Yacht Group, HR Team
       `,
-      attachments: [
-        {
-          filename: file.originalname,
-          content: file.buffer
-        }
-      ]
-    };
-    const mailOptions7 = {
-      from: "broker@megasails.com",
-      to: "broker@megasails.com",
-      subject: "American Yacht Group - Yacht Broker Services",
-      text: `
+        attachments: [
+          {
+            filename: file.originalname,
+            content: fs.readFileSync(file.path),
+          },
+        ],
+      };
+      const mailOptions7 = {
+        from: "broker@megasails.com",
+        to: "broker@megasails.com",
+        subject: "American Yacht Group - Yacht Broker Services",
+        text: `
     Name: ${NM_firstName} ${NM_lastName}
     Email: ${ID_email}
     Phone: ${NO_phoneNumber}
     Category: ${CA_category}
     Comments: ${DS_comments1}   
           `,
-          attachments: [
-            {
-              filename: file.originalname,
-              content: file.buffer
-            }
-          ]
-    };
-    // Send email
-    await transporter.sendMail(mailOptions6); //Candidate
-    await transporter.sendMail(mailOptions7); //AYG Team
+        attachments: [
+          {
+            filename: file.originalname,
+            content: file.buffer,
+          },
+        ],
+      };
+      // Send email
+      await transporter.sendMail(mailOptions6); //Candidate
+      //await transporter.sendMail(mailOptions7); //AYG Team
 
-
-    console.log('Email sent successfully');
-    res.json({ success: true, message: 'Email sent successfully' });
-  } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ error: error.message || 'An error occurred' });
+      console.log("Email sent successfully");
+      res.json({ success: true, message: "Email sent successfully" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      res.status(500).json({ error: error.message || "An error occurred" });
+    }
   }
-});
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 app.get("/api/documents*", async (req, res) => {
   try {
