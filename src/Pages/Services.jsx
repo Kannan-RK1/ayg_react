@@ -372,13 +372,13 @@ const Services = () => {
                   fontSize: "18px",
                 }}
               >
-                Megasails is excited to present our unmatched Yacht Charter
+                American Yacht Group is excited to present our unmatched Yacht Charter
                 Services. Immerse yourself in luxury and adventure with our
                 curated selection of exquisite yachts and professional crews,
                 guaranteeing an unforgettable experience. Whether for relaxation
                 or exploration, our services promise cherished memories and
-                cater to your desires. Trust Megasails as your go-to yacht
-                co-broker for the ultimate voyage of opulence and tranquility.
+                cater to your desires. Trust American Yacht Group as your go-to yacht
+                broker for the ultimate voyage of opulence and tranquility.
               </p>
               <div>
                 <button

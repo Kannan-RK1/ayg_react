@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Img_URL1 } from "../Components/Ads_URL";
 
 const Speciale = () => {
   const handleClick = () => {
@@ -55,7 +56,7 @@ const Speciale = () => {
 
       <div>
         <img
-          src="https://americanyachtgroup.com/wp-content/uploads/2022/10/contact-us-hero.webp"
+          src="https://ayg.s3.us-east-2.amazonaws.com/hero.webp"
           alt=""
           className="img-fluid"
         />
@@ -303,7 +304,7 @@ const Speciale = () => {
                         }}
                       >
                         <img
-                          src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                          src={Img_URL1}
                           alt="Advertisement"
                           height={"305px"} // Adjust the height of the image as needed
                         />
@@ -325,42 +326,42 @@ const Speciale = () => {
           <h5 class="fw-bold fs-4 lh-sm py-3">EXPLORE OTHER HCB MODELS</h5>
           <Row className="g-3">
             <Col xs={12} md={6} lg={3}>
-              <img
-                class="img-fluid"
-                src="https://hcbyachts.com/wp-content/uploads/2021/12/siesta3.jpeg"
-                alt="39"
-              />
               <Link onClick={handleClick} to={`/42-lujo`}>
+                <img
+                  class="img-fluid"
+                  src="https://hcbyachts.com/wp-content/uploads/2021/12/siesta3.jpeg"
+                  alt="39"
+                />
                 <p class="fw-bold py-2 text-primary-emphasis">42 LUJO</p>
               </Link>
             </Col>
             <Col xs={12} md={6} lg={3}>
-              <img
-                class="img-fluid"
-                src="https://hcbyachts.com/wp-content/uploads/2022/02/s-QfSWeg.jpg"
-                alt="48"
-              />
               <Link onClick={handleClick} to={`/48-campeon`}>
+                <img
+                  class="img-fluid"
+                  src="https://hcbyachts.com/wp-content/uploads/2022/02/s-QfSWeg.jpg"
+                  alt="48"
+                />
                 <p class="fw-bold py-2 text-primary-emphasis">48 CAMPEON</p>
               </Link>
             </Col>
             <Col xs={12} md={6} lg={3}>
-              <img
-                class="img-fluid"
-                src="https://hcbyachts.com/wp-content/uploads/2022/02/DJI_0075.jpg"
-                alt="53"
-              />
               <Link onClick={handleClick} to={`/53-suenos`}>
+                <img
+                  class="img-fluid"
+                  src="https://hcbyachts.com/wp-content/uploads/2022/02/DJI_0075.jpg"
+                  alt="53"
+                />
                 <p class="fw-bold py-2 text-primary-emphasis">53 SUENOS</p>
               </Link>
             </Col>
             <Col xs={12} md={6} lg={3}>
-              <img
-                class="img-fluid"
-                src="https://hcbyachts.com/wp-content/uploads/2021/12/6500001-scaled-1.jpeg"
-                alt="65"
-              />
               <Link onClick={handleClick} to={`/65-estrella`}>
+                <img
+                  class="img-fluid"
+                  src="https://hcbyachts.com/wp-content/uploads/2021/12/6500001-scaled-1.jpeg"
+                  alt="65"
+                />
                 <p class="fw-bold py-2 text-primary-emphasis">65 ESTRELLA</p>
               </Link>
             </Col>

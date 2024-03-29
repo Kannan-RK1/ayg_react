@@ -13,6 +13,7 @@ import { classNames } from "../Components/ClassNameCollections";
 import NavBar from "../Components/Navbar";
 import { Link, useLocation } from "react-router-dom";
 import Express_URL from "../Components/Express_URL";
+import { Img_URL1, Img_URL3 } from "../Components/Ads_URL";
 
 function Search() {
   const location = useLocation();
@@ -134,7 +135,7 @@ function Search() {
               <Row className="d-md-none">
                 <Col>
                   <img
-                    src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                    src={Img_URL1}
                     alt="Mobile"
                     className="img-fluid"
                   />
@@ -145,7 +146,7 @@ function Search() {
               <Row className="d-none d-md-flex d-lg-none">
                 <Col>
                   <img
-                    src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                    src={Img_URL1}
                     alt="Tablet"
                     className="img-fluid"
                   />
@@ -156,7 +157,7 @@ function Search() {
               <Row className="d-none d-lg-flex">
                 <Col>
                   <img
-                    src="https://ayg.s3.us-east-2.amazonaws.com/Explore+Travel.gif"
+                    src={Img_URL3}
                     alt="Desktop"
                     className="img-fluid"
                   />
@@ -187,7 +188,7 @@ function Search() {
                 }}
               >
                 <img
-                  src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                  src={Img_URL1}
                   alt="Advertisement"
                   height={"305px"} // Adjust the height of the image as needed
                   width={"auto"}

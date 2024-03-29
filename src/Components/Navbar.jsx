@@ -60,7 +60,7 @@ const NavBar = () => {
               <Nav.Link
                 as={Link}
                 onClick={handleClick}
-                to="/search?make=HCB"
+                to="/yachts-for-sale?make=HCB"
                 className="text-white fw-500 fs-20px "
               >
                 Yachts For Sale
@@ -76,7 +76,7 @@ const NavBar = () => {
               <Nav.Link
                 as={Link}
                 onClick={handleClick}
-                to="/news&events"
+                to="/news-events"
                 className="text-white fw-500 fs-20px "
               >
                 News & Events
@@ -88,7 +88,7 @@ const NavBar = () => {
                 className="text-white fw-500 fs-20px "
               >
                 Careers
-              </Nav.Link> 
+              </Nav.Link>
               <Nav.Link
                 as={Link}
                 onClick={handleClick}
@@ -96,7 +96,7 @@ const NavBar = () => {
                 className="text-white fw-500 fs-20px "
               >
                 Contact Us
-              </Nav.Link>             
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -123,7 +123,7 @@ const NavBar = () => {
                 style={{ filter: "brightness(0) invert(1)" }}
                 className="p-2"
               />
-            </Nav.Link>            
+            </Nav.Link>
           </Nav>
         </div>
       </Navbar>

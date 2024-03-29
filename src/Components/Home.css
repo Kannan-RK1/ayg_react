@@ -1,9 +1,37 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
+.banner {
+  position: relative;
 }
 
-.banner {
+.banner-content {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* Aspect ratio 16:9 */
+}
+
+.banner iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.banner-text {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .banner-text h2 {
+    font-size: 24px;
+  }
+}
+/* Only Mobile  */
+.mob-banner {
   position: relative;
   width: 100%;
   height: 56.25vw;
@@ -13,8 +41,8 @@
   justify-content: flex-end;
 }
 
-@media only screen and (min-width: 10px) and (max-width: 768px) {
-  .banner {
+@media only screen and (min-width: 10px) and (max-width: 500px) {
+  .mob-banner {
     position: relative;
     width: 100%;
     height: 150.25vw;
@@ -24,7 +52,7 @@
     justify-content: flex-end;
     overflow-x: hidden;
   }
-  .banner-text {
+  .mob-banner-text {
     z-index: 1;
     font-size: 1.5em;
     margin-bottom: 0;
@@ -33,37 +61,7 @@
     text-align: center;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 996px) {
-  .banner {
-    position: relative;
-    width: 100%;
-    height: 70.25vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-  }
-  .banner-text {
-    z-index: 1;
-    font-size: 2em;
-    line-height: 65px;
-    margin-bottom: 5%;
-    font-family: "Merianda";
-    color: white;
-    text-align: center;
-  }
-}
-@media only screen and (min-width: 996px) and (max-width: 1500px) {
-  .banner-text {
-    z-index: 1;
-    font-size: 2em;
-    line-height: 60px;
-    margin-bottom: 15%;
-    font-family: "Merianda";
-    color: white;
-    text-align: center;
-  }
-}
+
 /* ---------- Animation --------------- */
 @keyframes fade {
   0% {

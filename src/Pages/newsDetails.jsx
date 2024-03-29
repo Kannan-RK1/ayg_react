@@ -18,12 +18,12 @@ const NewsDetails = () => {
           <div className="row mb-5">
             <div className="col-12 col-md-6 d-flex align-items-center text-primary-emphasis">
               <div>
-                <img
+                {/* <img
                   src={my_logo}
                   alt="..."
                   height="50px"
                   style={{ filter: "brightness(100) invert(1)", color: "#000" }}
-                />
+                /> */}
                 <p className="mb-0">August 28, 2023</p>
                 <h1 className="fw-bold">
                   PREPARING YOUR BOAT FOR HURRICANE SEASON

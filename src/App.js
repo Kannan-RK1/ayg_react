@@ -19,6 +19,7 @@ import NewsDetails1 from "./Pages/newsDetails1";
 import MarketingPolicy from "./Pages/MarketingPolicy";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Careers from "./Pages/Careers";
+import NewsDetails2 from "./Pages/newsDetails2";
 
 function App() {
   const ScrollToTop = () => {
@@ -39,7 +40,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/yachts-for-sale" element={<Search />} />
           <Route path="/yachtdetails/:id" element={<YachtDetails />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -48,10 +49,11 @@ function App() {
           <Route path="/42-lujo" element={<Lujo />} />
           <Route path="/48-campeon" element={<Campeon />} />
           <Route path="/53-suenos" element={<Suenos />} />
-          <Route path="/65-estrella" element={<Estrella />} />          
-          <Route path="/news&events" element={<NewsEvents />} />
+          <Route path="/65-estrella" element={<Estrella />} />
+          <Route path="/news-events" element={<NewsEvents />} />
           <Route path="/newsDetails/aug28" element={<NewsDetails />} />
           <Route path="/newsDetails/aug3" element={<NewsDetails1 />} />
+          <Route path="/newsDetails/feb24" element={<NewsDetails2 />} />
           <Route path="/marketing-policy" element={<MarketingPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/careers" element={<Careers />} />

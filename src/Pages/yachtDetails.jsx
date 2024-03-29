@@ -13,6 +13,7 @@ import Express_URL from "../Components/Express_URL";
 
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
+import { Img_URL4 } from "../Components/Ads_URL";
 const YachtDetails = () => {
   const { id } = useParams();
 
@@ -337,7 +338,7 @@ const YachtDetails = () => {
                     <Row className="d-none d-lg-flex">
                       <Col>
                         <img
-                          src="https://ayg.s3.us-east-2.amazonaws.com/ad3.gif"
+                          src={Img_URL4}
                           alt="Desktop"
                           style={{ height: "600px" }}
                           className="img-fluid"

@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
-import NavBar from '../Components/Navbar'
-import { Accordion, Button, Col, Container, Form, Row } from 'react-bootstrap'
+import NavBar from "../Components/Navbar";
+import { Accordion, Button, Col, Container, Form, Row } from "react-bootstrap";
 import axios from "axios";
 import Express_URL from "../Components/Express_URL";
 
 const Careers = () => {
-    const formRef = useRef();
+  const formRef = useRef();
 
   const scrollToForm = () => {
     if (formRef.current) {
@@ -40,60 +40,60 @@ const Careers = () => {
   };
 
   const [formData, setFormData] = useState({
-    NM_firstName: '',
-    NM_lastName: '',
-    ID_email: '',
-    NO_phoneNumber: '',
-    CD_city: '',
-    CD_state: '',
-    CD_country: '',
-    CA_category: '',
-    DS_comments1: '',
+    NM_firstName: "",
+    NM_lastName: "",
+    ID_email: "",
+    NO_phoneNumber: "",
+    CD_city: "",
+    CD_state: "",
+    CD_country: "",
+    CA_category: "",
+    DS_comments1: "",
     FL_file: null,
   });
 
-  const handleChange = (e) => {    
+  const handleChange = (e) => {
     const { name, value, files } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: name === 'FL_file' ? files[0] : value
+      [name]: name === "FL_file" ? files[0] : value,
     }));
-};
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const formDataToSend = new FormData();
-  Object.entries(formData).forEach(([key, value]) => {
-    formDataToSend.append(key, value);
-  });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formDataToSend = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataToSend.append(key, value);
+    });
 
-  try {
-    await axios.post('/api/send-email-careers', formDataToSend, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    });
-    alert('Form submitted successfully!');
-    setFormData({
-      ...formData,
-      NM_firstName: '',
-      NM_lastName: '',
-      ID_email: '',
-      NO_phoneNumber: '',
-      CD_city: '',
-      CD_state: '',
-      CD_country: '',
-      CA_category: '',
-      DS_comments1: '',
-      FL_file: null
-    });
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  }
+    try {
+      await axios.post("/api/send-email-careers", formDataToSend, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      alert("Form submitted successfully!");
+      setFormData({
+        ...formData,
+        NM_firstName: "",
+        NM_lastName: "",
+        ID_email: "",
+        NO_phoneNumber: "",
+        CD_city: "",
+        CD_state: "",
+        CD_country: "",
+        CA_category: "",
+        DS_comments1: "",
+        FL_file: null,
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
   return (
     <div>
-        <NavBar />
+      <NavBar />
       <div
         style={{
           background:
@@ -102,39 +102,39 @@ const handleSubmit = async (e) => {
         }}
       ></div>
 
-<section class="careers-banner my-5">
-      <div class="container p-5" style={{backgroundColor: "#eeeeee"}}>
-        <div class="row mb-5">
-          <div class="col-12 col-md-6 d-flex align-items-center">
-            <div>
-              <p class="mb-0 text-warning fw-bold">CAREER OPPORTUNITIES</p>
-              <h1>
-                DO YACHTS EXCITE YOU? JOIN US & GET EXCITED DAILY. SEND US YOUR
-                RESUME.
-              </h1>
-              <p class="mb-0">
-                At American Yacht Group, each employee plays a vital role in our
-                success. The “AYG Culture” is inclusive, diverse, and values
-                each employee as a critical element to our success. Come join
-                our crew by applying to one of our active positions below or
-                submitting your resume for future consideration.
-              </p>
+      <section class="careers-banner my-5">
+        <div class="container p-5" style={{ backgroundColor: "#eeeeee" }}>
+          <div class="row mb-5">
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <div>
+                <p class="mb-0 text-warning fw-bold">CAREER OPPORTUNITIES</p>
+                <h1>
+                  DO YACHTS EXCITE YOU? JOIN US & GET EXCITED DAILY. SEND US
+                  YOUR RESUME.
+                </h1>
+                <p class="mb-0">
+                  At American Yacht Group, each employee plays a vital role in
+                  our success. The “AYG Culture” is inclusive, diverse, and
+                  values each employee as a critical element to our success.
+                  Come join our crew by applying to one of our active positions
+                  below or submitting your resume for future consideration.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <img
-              src="https://americanyachtgroup.com/wp-content/uploads/2023/11/FLIBS3.jpg"
-              alt=""
-              class="img-fluid mt-3"
-            />
-          </div>
-          
-          <div class="col-12 mt-5">
-          <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>YACHTS SERVICE ADVISOR</Accordion.Header>
-        <Accordion.Body>
-          <ul>
+            <div class="col-12 col-md-6">
+              <img
+                src="https://ayg.s3.us-east-2.amazonaws.com/FLIBS3.jpg"
+                alt=""
+                class="img-fluid mt-3"
+              />
+            </div>
+
+            <div class="col-12 mt-5">
+              <Accordion defaultActiveKey="0">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>YACHTS SERVICE ADVISOR</Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
                       <li>
                         4+ years’ experience or more working as a marine service
                         advisor with technician experience.
@@ -167,15 +167,21 @@ const handleSubmit = async (e) => {
                         needs of our customers.
                       </li>
                     </ul>
-                    <button type="button"  onClick={() => handleButtonClick("YACHTS SERVICE ADVISOR")} class="btn custom-contact-btn btn-sm">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleButtonClick("YACHTS SERVICE ADVISOR")
+                      }
+                      class="btn custom-contact-btn btn-sm"
+                    >
                       Apply Now!
                     </button>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>YACHTS SERVICE TECHNICIAN</Accordion.Header>
-        <Accordion.Body>
-        <ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>YACHTS SERVICE TECHNICIAN</Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
                       <li>
                         4+ years’ experience or more working as a marine
                         technician.
@@ -205,15 +211,21 @@ const handleSubmit = async (e) => {
                         Simrad, Furuno etc).
                       </li>
                     </ul>
-                    <button type="button"  onClick={() => handleButtonClick("YACHTS SERVICE TECHNICIAN")} class="btn custom-contact-btn btn-sm">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleButtonClick("YACHTS SERVICE TECHNICIAN")
+                      }
+                      class="btn custom-contact-btn btn-sm"
+                    >
                       Apply Now!
                     </button>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="2">
-        <Accordion.Header>MOBILE YACHT TECHNICIAN</Accordion.Header>
-        <Accordion.Body>
-        <ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                  <Accordion.Header>MOBILE YACHT TECHNICIAN</Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
                       <li>
                         4+ years’ experience or more working as a marine
                         technician.
@@ -238,15 +250,23 @@ const handleSubmit = async (e) => {
                         Simrad, Furuno etc).
                       </li>
                     </ul>
-                    <button type="button"  onClick={() => handleButtonClick("MOBILE YACHT TECHNICIAN")} class="btn custom-contact-btn btn-sm">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleButtonClick("MOBILE YACHT TECHNICIAN")
+                      }
+                      class="btn custom-contact-btn btn-sm"
+                    >
                       Apply Now!
                     </button>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="3">
-        <Accordion.Header>ELECTRICAL AND ELECTRONICS TECHNICIAN</Accordion.Header>
-        <Accordion.Body>
-        <ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="3">
+                  <Accordion.Header>
+                    ELECTRICAL AND ELECTRONICS TECHNICIAN
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
                       <li>
                         4+ years’ experience or more working as a marine
                         electronics &nbsp; technician
@@ -296,15 +316,23 @@ const handleSubmit = async (e) => {
                         of defective equipment
                       </li>
                     </ul>
-                    <button type="button"  onClick={() => handleButtonClick("ELECTRICAL AND ELECTRONICS TECHNICIAN")} class="btn custom-contact-btn btn-sm">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleButtonClick(
+                          "ELECTRICAL AND ELECTRONICS TECHNICIAN"
+                        )
+                      }
+                      class="btn custom-contact-btn btn-sm"
+                    >
                       Apply Now!
                     </button>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="4">
-        <Accordion.Header>YACHT PAINT TECHNICIAN</Accordion.Header>
-        <Accordion.Body>
-        <ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="4">
+                  <Accordion.Header>YACHT PAINT TECHNICIAN</Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
                       <li class="ayg-p-2">
                         Prepares wood, metal, fiberglass or other surfaces for
                         painting and varnishing.
@@ -345,15 +373,23 @@ const handleSubmit = async (e) => {
                         maintain safe, clean work area.
                       </li>
                     </ul>
-                    <button type="button"  onClick={() => handleButtonClick("YACHT PAINT TECHNICIAN")} class="btn custom-contact-btn btn-sm">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleButtonClick("YACHT PAINT TECHNICIAN")
+                      }
+                      class="btn custom-contact-btn btn-sm"
+                    >
                       Apply Now!
                     </button>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="5">
-        <Accordion.Header>A/C AND REFRIGERATION TECHNICIAN</Accordion.Header>
-        <Accordion.Body>
-        <ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="5">
+                  <Accordion.Header>
+                    A/C AND REFRIGERATION TECHNICIAN
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
                       <li>
                         Perform installations, repairs, overhauls, and start-ups
                         of marine HVAC and refrigeration systems.
@@ -388,36 +424,42 @@ const handleSubmit = async (e) => {
                         refrigeration is a plus.
                       </li>
                     </ul>
-                    <button type="button"  onClick={() => handleButtonClick("A/C AND REFRIGERATION TECHNICIAN")} class="btn custom-contact-btn btn-sm">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleButtonClick("A/C AND REFRIGERATION TECHNICIAN")
+                      }
+                      class="btn custom-contact-btn btn-sm"
+                    >
                       Apply Now!
                     </button>
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-          </div>
-          <div class="text-center mt-5">
-            <h1>EQUAL EMPLOYMENT OPPORTUNITIES</h1>
-            <p class="mb-0" style={{textAlign:"justify"}}>
-              American Yacht Group provides equal employment opportunities to
-              all employees and applicants for employment and prohibits
-              discrimination and harassment of any type without regard to race,
-              color, religion, age, sex, national origin, disability status,
-              genetics, protected veteran status, sexual orientation, gender
-              identity or expression, or any other characteristic protected by
-              federal, state or local laws.
-            </p>
-            <p class="mb-0" style={{textAlign:"justify"}}>
-              This policy applies to all terms and conditions of employment,
-              including recruiting, hiring, placement, promotion, termination,
-              layoff, recall, transfer, leaves of absence, compensation and
-              training.
-            </p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </div>
+            <div class="text-center mt-5">
+              <h1>EQUAL EMPLOYMENT OPPORTUNITIES</h1>
+              <p class="mb-0" style={{ textAlign: "justify" }}>
+                American Yacht Group provides equal employment opportunities to
+                all employees and applicants for employment and prohibits
+                discrimination and harassment of any type without regard to
+                race, color, religion, age, sex, national origin, disability
+                status, genetics, protected veteran status, sexual orientation,
+                gender identity or expression, or any other characteristic
+                protected by federal, state or local laws.
+              </p>
+              <p class="mb-0" style={{ textAlign: "justify" }}>
+                This policy applies to all terms and conditions of employment,
+                including recruiting, hiring, placement, promotion, termination,
+                layoff, recall, transfer, leaves of absence, compensation and
+                training.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="c-contact-us" style={{ backgroundColor: "#ebf0f7" }}>
+      <section className="c-contact-us" style={{ backgroundColor: "#ebf0f7" }}>
         <Container fluid className="col-lg-11 py-3">
           <div class="text-center">
             <h4 class="py-2 c-heading">
@@ -549,24 +591,35 @@ const handleSubmit = async (e) => {
                     }}
                   >
                     <option value="">Select Position...</option>
-                    <option value="YACHTS SERVICE ADVISOR">YACHTS SERVICE ADVISOR</option>
-                    <option value="YACHTS SERVICE TECHNICIAN">YACHTS SERVICE TECHNICIAN</option>
-                    <option value="MOBILE YACHT TECHNICIAN">MOBILE YACHT TECHNICIAN</option>
-                    <option value="ELECTRICAL AND ELECTRONICS TECHNICIAN">ELECTRICAL AND ELECTRONICS TECHNICIAN</option>
-                    <option value="YACHT PAINT TECHNICIAN">YACHT PAINT TECHNICIAN</option>
-                    <option value="A/C AND REFRIGERATION TECHNICIAN">A/C AND REFRIGERATION TECHNICIAN</option>
-                   
+                    <option value="YACHTS SERVICE ADVISOR">
+                      YACHTS SERVICE ADVISOR
+                    </option>
+                    <option value="YACHTS SERVICE TECHNICIAN">
+                      YACHTS SERVICE TECHNICIAN
+                    </option>
+                    <option value="MOBILE YACHT TECHNICIAN">
+                      MOBILE YACHT TECHNICIAN
+                    </option>
+                    <option value="ELECTRICAL AND ELECTRONICS TECHNICIAN">
+                      ELECTRICAL AND ELECTRONICS TECHNICIAN
+                    </option>
+                    <option value="YACHT PAINT TECHNICIAN">
+                      YACHT PAINT TECHNICIAN
+                    </option>
+                    <option value="A/C AND REFRIGERATION TECHNICIAN">
+                      A/C AND REFRIGERATION TECHNICIAN
+                    </option>
                   </Form.Control>
                 </Form.Group>
 
                 <Form.Control
-                                        type="file"
-                                        name="FL_file"
-                                        onChange={handleChange}
-                                        required
-                                    />
+                  className="mb-2"
+                  type="file"
+                  name="FL_file"
+                  onChange={handleChange}
+                  required
+                />
 
-      
                 <Form.Group controlId="comments">
                   <Form.Control
                     className="mb-2"
@@ -601,7 +654,7 @@ const handleSubmit = async (e) => {
         </Container>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Careers
+export default Careers;

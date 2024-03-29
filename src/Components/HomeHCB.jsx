@@ -1,8 +1,9 @@
 import "./Home.css";
 import React, { useEffect, useState } from "react";
-import { Alert, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Express_URL from "../Components/Express_URL";
+import { Img_URL1 } from "./Ads_URL";
 //import ikon from "../Images/ikon.gif";
 
 const HomeHCB = () => {
@@ -30,7 +31,7 @@ const HomeHCB = () => {
 
   return (
     <>
-      <div className="banner mb-4">
+      <div className="mob-banner d-md-none mb-4">
         <iframe
           src="https://player.vimeo.com/video/884489762?background=1"
           style={{
@@ -50,8 +51,7 @@ const HomeHCB = () => {
           data-ready="true"
           title="hcb-video"
         ></iframe>
-
-        <div className="banner-text container-fluid col-lg-11">
+        <div className="mob-banner-text container-fluid col-lg-11">
           <div>
             <Row className="g-2 mb-2 d-flex justify-content-center">
               <Col
@@ -72,7 +72,7 @@ const HomeHCB = () => {
 
               <Col xs={6} md={4} lg={2} className="btn btn-dark" type="button">
                 <Link
-                  to={`/search?make=HCB`}
+                  to={`/yachts-for-sale?make=HCB`}
                   className="text-white fs-5"
                   onClick={handleClick}
                 >
@@ -87,8 +87,44 @@ const HomeHCB = () => {
         </div>
       </div>
 
+      <div className="banner d-none d-md-block">
+        <div className="banner-content">
+          <iframe
+            src="https://player.vimeo.com/video/884489762?background=1"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="hcb-video"
+          ></iframe>
+          <div className="banner-text">
+            <h5 className="text-center fw-bold text-white">
+              Performance. Luxury. Comfort. Athleticism.
+            </h5>
+            <div className="text-center row">
+              <div className="col-6 text-end">
+                <Link
+                  to={`/hcb`}
+                  className="btn btn-light me-2"
+                  onClick={handleClick}
+                >
+                  Explore Models
+                </Link>
+              </div>
+              <div className="col-6 text-start">
+                <Link
+                  to={`/yachts-for-sale?make=HCB`}
+                  className="btn btn-dark"
+                  onClick={handleClick}
+                >
+                  View Inventory
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
-        <Container fluid className="col-lg-11">
+        <Container fluid className="col-lg-11 pt-4">
           <h5 className="text-dark fw-bold mb-4">
             Explore Featured HCB Collection
           </h5>
@@ -160,7 +196,7 @@ const HomeHCB = () => {
                         }}
                       >
                         <img
-                          src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                          src={Img_URL1}
                           alt="Advertisement"
                           height={"305px"} // Adjust the height of the image as needed
                           width={"auto"}
@@ -174,22 +210,22 @@ const HomeHCB = () => {
           </Row>
           {yachts.length === 0 && (
             // <Alert variant="warning">No yachts found.</Alert>
-          <div className="text-center">
-          <Spinner animation="border" variant="warning" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </div>
+            <div className="text-center">
+              <Spinner animation="border" variant="warning" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </div>
           )}
         </Container>
       </div>
       <Container fluid className="col-lg-11">
-      <Link to={`/search?make=HCB`} className=" text-white fs-5">
-        <div className="mt-3 p-3 text-center text-white gradient-c1">
-        <span>
+        <Link to={`/yachts-for-sale?make=HCB`} className=" text-white fs-5">
+          <div className="mt-3 p-3 text-center text-white gradient-c1">
+            <span>
               View Our Wide Collection Of New and Used HCB Yachts
               <i class="fa-solid fa-angles-right"></i>
             </span>
-        </div>
+          </div>
         </Link>
       </Container>
     </>

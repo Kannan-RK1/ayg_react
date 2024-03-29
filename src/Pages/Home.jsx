@@ -5,6 +5,7 @@ import HomeHCB from "../Components/HomeHCB";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Popup from "../Components/PopUP";
+import { Img_URL1, Img_URL3 } from "../Components/Ads_URL";
 
 const Home = () => {
   return (
@@ -19,86 +20,87 @@ const Home = () => {
       </div>
 
       <section class="container-fluid col-lg-11 py-4">
-      <div class="text-center">
-        <h4 class="mb-3 c-heading fw-bold py-2">
-          America's Top HCB Yacht Broker - Setting the Standard in Maritime
-          Excellence.
-        </h4>
+        <div class="text-center">
+          <h4 class="mb-3 c-heading fw-bold py-2">
+            America's Top HCB Yacht Broker - Setting the Standard in Maritime
+            Excellence.
+          </h4>
 
-        <p>
-          American Yacht Group, South Florida's top HCB Yachts dealer. Based in
-          Naples and serving Miami, Fort Lauderdale, Palm Beach, Stuart, the
-          Bahamas, and beyond, we redefine yachting. As a leading yacht
-          brokerage, we specialize in smooth experiences for buying and selling
-          boats, motor yachts, cruising vessels, and center-consoles. At
-          American Yacht Group, we're Info than dealers; we're passionate
-          navigators dedicated to elevating your yachting dreams.
-        </p>       
-      </div>
-      <div class="row g-0 mt-3">
-        <div class="col-sm-12 col-md-4">
-          <div class="c-ayg-effect-1">
-            <div class="c-ayg-effect-img">
-              <img
-                src="https://americanyachtgroup.com/wp-content/uploads/2022/10/services-4.webp"
-                alt="Image"
-              />
-            </div>
-            <div class="c-ayg-effect-text">
-              <h2>Why Choose Us</h2>
-              <p>
-                As a leading yacht brokerage, we specialize in smooth
-                experiences for buying and selling boats, motor yachts, cruising
-                vessels, and center-consoles.
-              </p>
-              {/* <div class="c-ayg-effect-btn">
+          <p>
+            American Yacht Group, South Florida's top HCB Yachts dealer. Based
+            in Naples and serving Miami, Fort Lauderdale, Palm Beach, Stuart,
+            the Bahamas, and beyond, we redefine yachting. As a leading yacht
+            brokerage, we specialize in smooth experiences for buying and
+            selling boats, motor yachts, cruising vessels, and center-consoles.
+            At American Yacht Group, we're Info than dealers; we're passionate
+            navigators dedicated to elevating your yachting dreams.
+          </p>
+        </div>
+        <div class="row g-0 mt-3">
+          <div class="col-sm-12 col-md-4">
+            <div class="c-ayg-effect-1">
+              <div class="c-ayg-effect-img">
+                <img
+                  src="https://ayg.s3.us-east-2.amazonaws.com/services-4.webp"
+                  alt="Image"
+                />
+              </div>
+              <div class="c-ayg-effect-text">
+                <h2>Why Choose Us</h2>
+                <p>
+                  As a leading yacht brokerage, we specialize in smooth
+                  experiences for buying and selling boats, motor yachts,
+                  cruising vessels, and center-consoles.
+                </p>
+                {/* <div class="c-ayg-effect-btn">
                 <a class="c-ayg-btn" href="#">Read More</a>
               </div> */}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <div class="c-ayg-effect-1">
-            <div class="c-ayg-effect-img">
-              <img
-                src="https://americanyachtgroup.com/wp-content/uploads/2022/10/hcb-image-1-1.webp"
-                alt="Image"
-              />
-            </div>
-            <div class="c-ayg-effect-text">
-              <h2>What We Do</h2>
-              <p>
-                American Yacht Group is your exclusive home for everything HCB
-                YACHTS in South Florida.
-              </p>
-              {/* <div class="c-ayg-effect-btn">
+          <div class="col-sm-12 col-md-4">
+            <div class="c-ayg-effect-1">
+              <div class="c-ayg-effect-img">
+                <img
+                  src="https://ayg.s3.us-east-2.amazonaws.com/hcb-image-1-1.webp"
+                  alt="Image"
+                />
+              </div>
+              <div class="c-ayg-effect-text">
+                <h2>What We Do</h2>
+                <p>
+                  American Yacht Group is your exclusive home for everything HCB
+                  YACHTS in South Florida.
+                </p>
+                {/* <div class="c-ayg-effect-btn">
                 <a class="c-ayg-btn" href="#">Read More</a>
               </div> */}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <div class="c-ayg-effect-1">
-            <div class="c-ayg-effect-img">
-              <img
-                src="https://americanyachtgroup.com/wp-content/uploads/2022/10/homepage-image-1-1.webp"
-                alt="Image"
-              />
-            </div>
-            <div class="c-ayg-effect-text">
-              <h2>Who We Are</h2>
-              <p>
-                American Yacht Group, South Florida's top HCB Yachts dealer.
-                Based in Naples and serving Miami, Fort Lauderdale, Palm Beach,
-                Stuart, the Bahamas, and beyond, we redefine yachting.
-              </p>
-              {/* <div class="c-ayg-effect-btn">
+          <div class="col-sm-12 col-md-4">
+            <div class="c-ayg-effect-1">
+              <div class="c-ayg-effect-img">
+                <img
+                  src="https://ayg.s3.us-east-2.amazonaws.com/homepage-image-1-1.webp"
+                  alt="Image"
+                />
+              </div>
+              <div class="c-ayg-effect-text">
+                <h2>Who We Are</h2>
+                <p>
+                  American Yacht Group, South Florida's top HCB Yachts dealer.
+                  Based in Naples and serving Miami, Fort Lauderdale, Palm
+                  Beach, Stuart, the Bahamas, and beyond, we redefine yachting.
+                </p>
+                {/* <div class="c-ayg-effect-btn">
                 <a class="c-ayg-btn" href="#">Read More</a>
               </div> */}
+              </div>
             </div>
           </div>
+                
         </div>
-      </div>
       </section>
 
       <section class="container-fluid col-lg-11 pb-5">
@@ -226,7 +228,10 @@ const Home = () => {
                   />
                 </div>
                 <div class="effect-text">
-                  <Link to={`/search?className=Motor Yachts`} className="text-white fs-5">
+                  <Link
+                    to={`/search?className=Motor Yachts`}
+                    className="text-white fs-5"
+                  >
                     <h2>MOTOR YACHTS</h2>
                   </Link>
                 </div>
@@ -329,7 +334,7 @@ const Home = () => {
       </section>
 
       <section>
-        <Link to={`/search?make=HCB`}>
+        <Link to={`/yachts-for-sale?make=HCB`}>
           <Container fluid className="col-lg-11 py-3">
             <Col key="advertisement" xs={12}>
               <Card
@@ -345,7 +350,7 @@ const Home = () => {
                       <Row className="d-md-none">
                         <Col>
                           <img
-                            src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                            src={Img_URL1}
                             alt="Mobile"
                             className="img-fluid"
                           />
@@ -356,7 +361,7 @@ const Home = () => {
                       <Row className="d-none d-md-flex d-lg-none">
                         <Col>
                           <img
-                            src="https://ayg.s3.us-east-2.amazonaws.com/HCB+(2).gif"
+                            src={Img_URL1}
                             alt="Tablet"
                             className="img-fluid"
                           />
@@ -367,7 +372,7 @@ const Home = () => {
                       <Row className="d-none d-lg-flex">
                         <Col>
                           <img
-                            src="https://ayg.s3.us-east-2.amazonaws.com/Explore+Travel.gif"
+                            src={Img_URL3}
                             alt="Desktop"
                             className="img-fluid"
                           />
