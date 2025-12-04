@@ -12,7 +12,7 @@
     "env-cmd": "^10.1.0",
     "firebase": "^9.23.0",
     "google-adsense": "^0.0.3",
-    "nodemailer": "^6.9.9",
+    "nodemailer": "^7.0.11",
     "react": "^18.2.0",
     "react-adsense": "^0.1.0",
     "react-bootstrap": "^2.8.0",
